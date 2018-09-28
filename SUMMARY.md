@@ -7,4 +7,5 @@
 * [Kuhn-Munkres算法的具体实现代码](kuhn-munkressuan-fa-de-ju-ti-shi-xian-dai-ma.md)
 * [二分图](er-fen-tu.md)
 * [匈牙利算法](xiong-ya-li-suan-fa.md)
+* [匈牙利树](xiong-ya-li-shu.md)
 
