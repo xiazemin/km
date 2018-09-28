@@ -18,7 +18,9 @@ int path\[UNIT\_COUNT\]; // 匹配信息，其中i为Y中的顶点标号，path\
 
 相对于匈牙利算法中的GRAPH\_MATCH定义，KM\_MATCH的主要变化是增加了sub\_map作为相等子图定义和标识yi是否在增广路径上的y\_on\_path标识。相对于我们前面对Kuhn-Munkres算法的分析，edge对应于边的权重表weight，sub\_map对应于算法执行过程中的相等子图，x\_on\_path和y\_on\_path分别用于标识X集合和Y集合中的顶点是否属于增广路径上的S集合和T集合，path就是最后匹配的结果
 
-                工作1 工作2 工作3 工作4 工作5
+```
+            工作1 工作2 工作3 工作4 工作5
+```
 
 工人1        3       5          5         4          1
 
@@ -29,4 +31,6 @@ int path\[UNIT\_COUNT\]; // 匹配信息，其中i为Y中的顶点标号，path\
 工人4        0        1           1          0         0
 
 工人5         1         2          1         3          3
+
+下面给出Kuhn-Munkres算法的具体实现代码，Kuhn\_Munkres\_Match\(\)函数虽然很长，但是并不难理解，因为这个代码是严格按照之前给出的Kuhn-Munkres算法的流程实现的。包括顶标的初始化、使用匈牙利算法求完美匹配和顶标调整在内的三个主要算法步骤在Kuhn\_Munkres\_Match\(\)函数中都得到体现，并且界定非常清晰。其中寻找增广路径的FindAugmentPath\(\)函数与之前介绍匈牙利算法时给出的FindAugmentPath\(\)函数实现非常类似，区别就是使用sub\_map而不是直接使用edge，并且额外记录了x\_on\_path标识。ResetMatchPath\(\)函数负责每次开始寻找相等子图之前清除上一次搜寻产生的临时增广路径，ClearOnPathSign\(\)函数负责在每次搜寻增广路径之前清除顶点是否属于S集合或T集合的标识，大家可以从本书的配套代码中找到此函数的代码。
 
