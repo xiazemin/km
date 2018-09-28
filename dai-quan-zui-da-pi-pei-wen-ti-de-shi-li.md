@@ -6,15 +6,17 @@ typedef struct tagKmMatch
 
 int edge\[UNIT\_COUNT\]\[UNIT\_COUNT\]; //Xi与Yj对应的边的权重
 
-bool sub\_map\[UNIT\_COUNT\]\[UNIT\_COUNT\];// 二分图的相等子图, sub\_map\[i\]\[j\] = 1 代表Xi与Yj有边  
+bool sub\_map\[UNIT\_COUNT\]\[UNIT\_COUNT\];// 二分图的相等子图, sub\_map\[i\]\[j\] = 1 代表Xi与Yj有边
 
-bool x\_on\_path\[UNIT\_COUNT\]; // 标记在一次寻找增广路径的过程中，Xi是否在增广路径上  
+bool x\_on\_path\[UNIT\_COUNT\]; // 标记在一次寻找增广路径的过程中，Xi是否在增广路径上
 
-bool y\_on\_path\[UNIT\_COUNT\]; // 标记在一次寻找增广路径的过程中，Yi是否在增广路径上  
+bool y\_on\_path\[UNIT\_COUNT\]; // 标记在一次寻找增广路径的过程中，Yi是否在增广路径上
 
- int path\[UNIT\_COUNT\]; // 匹配信息，其中i为Y中的顶点标号，path\[i\]为X中顶点标号 
-
-
+int path\[UNIT\_COUNT\]; // 匹配信息，其中i为Y中的顶点标号，path\[i\]为X中顶点标号
 
 }KM\_MATCH;
+
+
+
+相对于匈牙利算法中的GRAPH\_MATCH定义，KM\_MATCH的主要变化是增加了sub\_map作为相等子图定义和标识yi是否在增广路径上的y\_on\_path标识。相对于我们前面对Kuhn-Munkres算法的分析，edge对应于边的权重表weight，sub\_map对应于算法执行过程中的相等子图，x\_on\_path和y\_on\_path分别用于标识X集合和Y集合中的顶点是否属于增广路径上的S集合和T集合，path就是最后匹配的结果
 
