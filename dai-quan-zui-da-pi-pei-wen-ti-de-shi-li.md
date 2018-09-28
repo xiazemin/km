@@ -6,13 +6,13 @@ typedef struct tagKmMatch
 
 int edge\[UNIT\_COUNT\]\[UNIT\_COUNT\]; //Xi与Yj对应的边的权重
 
-    bool sub\_map\[UNIT\_COUNT\]\[UNIT\_COUNT\];// 二分图的相等子图, sub\_map\[i\]\[j\] = 1 代表Xi与Yj有边  
+bool sub\_map\[UNIT\_COUNT\]\[UNIT\_COUNT\];// 二分图的相等子图, sub\_map\[i\]\[j\] = 1 代表Xi与Yj有边  
 
-    bool x\_on\_path\[UNIT\_COUNT\]; // 标记在一次寻找增广路径的过程中，Xi是否在增广路径上  
+bool x\_on\_path\[UNIT\_COUNT\]; // 标记在一次寻找增广路径的过程中，Xi是否在增广路径上  
 
-    bool y\_on\_path\[UNIT\_COUNT\]; // 标记在一次寻找增广路径的过程中，Yi是否在增广路径上  
+bool y\_on\_path\[UNIT\_COUNT\]; // 标记在一次寻找增广路径的过程中，Yi是否在增广路径上  
 
-    int path\[UNIT\_COUNT\]; // 匹配信息，其中i为Y中的顶点标号，path\[i\]为X中顶点标号 
+ int path\[UNIT\_COUNT\]; // 匹配信息，其中i为Y中的顶点标号，path\[i\]为X中顶点标号 
 
 
 
