@@ -2,5 +2,5 @@
 
 一般由 BFS 构造（类似于 BFS 树）。从一个未匹配点出发运行 BFS（唯一的限制是，必须走交替路），直到不能再扩展为止。例如，由图 7，可以得到如图 8 的一棵 BFS 树
 
-![](/assets/m7.png)![](/assets/m8.png)
+![](/assets/m7.png)![](/assets/m8.png)![](/assets/m9.png)
 
